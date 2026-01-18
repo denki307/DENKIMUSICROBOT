@@ -84,18 +84,13 @@ def help_pannel(_, is_sudo, START: Union[bool, int] = None):
                     text=_["H_B_15"],
                     callback_data="help_callback hb15",
                 ),
-            ]
-        ],
-        [
+            ],
             [
                 InlineKeyboardButton(
                     text=_["BACK_BUTTON"],
                     callback_data=f"settings_back_helper",
                 ),
             ]
-        ]
-    )
-    return upl
 
 
 def private_help_panel(_):
