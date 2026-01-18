@@ -89,7 +89,10 @@ def help_pannel(_, is_sudo, START: Union[bool, int] = None):
     
     if is_sudo:
         upl.append(
-            
+            [
+                
+                )
+            ]
         )
     
     upl.append(mark)
