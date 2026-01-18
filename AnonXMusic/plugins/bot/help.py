@@ -136,34 +136,6 @@ async def helper_cb(client, CallbackQuery:CallbackQuery, _):
         await CallbackQuery.edit_message_text(helpers.HELP_14, reply_markup=keyboard)
     elif cb == "hb15":
         await CallbackQuery.edit_message_text(helpers.HELP_15, reply_markup=keyboard)
-    elif cb == "hb16":
-        btn = [
-            [
-                InlineKeyboardButton(
-                    text="Ai Model Setting",
-                    callback_data="help_callback hb19",
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    text="TTS Model Setting",
-                    callback_data="help_callback hb17",
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    text="IMAGE Model Setting",
-                    callback_data="help_callback hb18",
-                )
-            ],
-            [
-                InlineKeyboardButton(
-                    text=_["BACK_BUTTON"],
-                    callback_data=f"settings_back_helper",
-                )
-            ]
-        ]
-        await CallbackQuery.edit_message_text(f"AI, TTS and Image Model Settings \n\n[Check Docs here]({YTPROXY_URL}/docs)", reply_markup=InlineKeyboardMarkup(btn),parse_mode=ParseMode.DEFAULT)
     elif cb == "hb17":
         model_settings = await get_model_settings()
         current_tts = model_settings.get("tts", "athena")
