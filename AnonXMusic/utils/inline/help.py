@@ -5,7 +5,7 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 from AnonXMusic import app
 
 
-def help_pannel(_, is_sudo, START: Union[bool, int] = None):
+def help_pannel(_, START: Union[bool, int] = None):
     first = [InlineKeyboardButton(text=_["CLOSE_BUTTON"], callback_data=f"close")]
     second = [
         InlineKeyboardButton(
@@ -14,7 +14,8 @@ def help_pannel(_, is_sudo, START: Union[bool, int] = None):
         ),
     ]
     mark = second if START else first
-    upl = [
+    upl = InlineKeyboardMarkup(
+        [
             [
                 InlineKeyboardButton(
                     text=_["H_B_1"],
@@ -84,22 +85,11 @@ def help_pannel(_, is_sudo, START: Union[bool, int] = None):
                     text=_["H_B_15"],
                     callback_data="help_callback hb15",
                 ),
-            ]
+            ],
+            mark,
         ]
-    
-    if is_sudo:
-        upl.append(
-            [
-                InlineKeyboardButton(
-                    text="Ai/TTS/IMAGE Settings",
-                    callback_data="help_callback hb16",
-                )
-            ]
-        )
-    
-    upl.append(mark)
-
-    return InlineKeyboardMarkup(upl)
+    )
+    return upl
 
 
 def help_back_markup(_):
