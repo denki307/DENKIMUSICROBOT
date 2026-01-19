@@ -90,10 +90,7 @@ def help_pannel(_, is_sudo, START: Union[bool, int] = None):
     if is_sudo:
         upl.append(
             [
-                InlineKeyboardButton(
-                    text="❛ .𝁘ໍ𝗭꯭ᴀ꯭ғ꯭ɪ꯭ʀ꯭ᴀ꯭ᴀ꯭ ᴍ꯭ᴜ꯭ꜱ꯭ɪ꯭ᴄ꯭ ʙ꯭ᴏ꯭ᴛ꯭𓆪ִֶָ ֺ⎯꯭‌ 𓆩💗𓆪𓈒",
-                    callback_data="help_callback hb16",
-                )
+                
             ]
         )
     
